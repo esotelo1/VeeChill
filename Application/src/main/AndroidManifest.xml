@@ -17,7 +17,7 @@
     package="com.veechill.main.veechill"
     android:versionCode="1"
     android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="14" />
+    <uses-sdk android:targetSdkVersion="21"/>
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
 
     <!-- Request Permissions -->
@@ -27,10 +27,12 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+
         android:theme="@style/AppTheme">
         <activity
             android:name=".NavigationDrawerActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
