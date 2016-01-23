@@ -16,13 +16,12 @@
 -->
 
 <resources>
-    <string name="app_name">Navigation Drawer</string>
+    <string name="app_name">VeeChill</string>
     <string name="intro_message">
         <![CDATA[
         
             
-             This example illustrates a common usage of the DrawerLayout widget in the Android
-             support library.
+             This application allows you to simultaneous run live video alongside web chat!
             
         
         ]]>

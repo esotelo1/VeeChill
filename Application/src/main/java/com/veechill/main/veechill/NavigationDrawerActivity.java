@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.navigationdrawer;
+package com.veechill.main.veechill;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -37,6 +37,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import android.support.v7.widget.LinearLayoutManager;
+
+import com.veechill.main.veechill.R;
 
 import java.util.Locale;
 
@@ -67,7 +69,7 @@ import java.util.Locale;
  * An action should be an operation performed on the current contents of the window,
  * for example enabling or disabling a data overlay on top of the current content.</p>
  */
-public class NavigationDrawerActivity extends Activity implements PlanetAdapter.OnItemClickListener {
+public class NavigationDrawerActivity extends Activity implements ViewsAdapter.OnItemClickListener {
     private DrawerLayout mDrawerLayout;
     private RecyclerView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -82,7 +84,7 @@ public class NavigationDrawerActivity extends Activity implements PlanetAdapter.
         setContentView(R.layout.activity_navigation_drawer);
 
         mTitle = mDrawerTitle = getTitle();
-        mPlanetTitles = getResources().getStringArray(R.array.planets_array);
+        mPlanetTitles = getResources().getStringArray(R.array.view_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (RecyclerView) findViewById(R.id.left_drawer);
 
@@ -95,7 +97,7 @@ public class NavigationDrawerActivity extends Activity implements PlanetAdapter.
         mDrawerList.setHasFixedSize(true);
 
         // set up the drawer's list view with items and click listener
-        mDrawerList.setAdapter(new PlanetAdapter(mPlanetTitles, this));
+        mDrawerList.setAdapter(new ViewsAdapter(mPlanetTitles, this));
         // enable ActionBar app icon to behave as action to toggle nav drawer
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
@@ -236,7 +238,7 @@ public class NavigationDrawerActivity extends Activity implements PlanetAdapter.
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
             int i = getArguments().getInt(ARG_PLANET_NUMBER);
-            String planet = getResources().getStringArray(R.array.planets_array)[i];
+            String planet = getResources().getStringArray(R.array.view_array)[i];
 
             int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
                     "drawable", getActivity().getPackageName());

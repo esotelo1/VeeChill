@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.example.android.navigationdrawer;
+package com.veechill.main.veechill;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
+
+import com.veechill.main.veechill.R;
 
 /**
  * Adapter for the planet data used in our drawer menu,
  */
-public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.ViewHolder> {
+public class ViewsAdapter extends RecyclerView.Adapter<ViewsAdapter.ViewHolder> {
     private String[] mDataset;
     private OnItemClickListener mListener;
 
@@ -50,7 +50,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.ViewHolder
         }
     }
 
-    public PlanetAdapter(String[] myDataset, OnItemClickListener listener) {
+    public ViewsAdapter(String[] myDataset, OnItemClickListener listener) {
         mDataset = myDataset;
         mListener = listener;
     }

@@ -13,9 +13,9 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.example.android.navigationdrawer.tests;
+package com.veechill.tests;
 
-import com.example.android.navigationdrawer.*;
+import com.veechill.main.veechill.NavigationDrawerActivity;
 
 import android.test.ActivityInstrumentationTestCase2;
 
