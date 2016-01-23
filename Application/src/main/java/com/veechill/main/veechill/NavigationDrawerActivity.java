@@ -28,6 +28,7 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -78,6 +79,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("navact", "test");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
 
@@ -242,19 +244,32 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
             int view = R.layout.fragment_planet;
             switch(i) {
                 case 0:
-                    view = R.layout.activity_login;
+                    //view = R.layout.activity_login;
+                    Intent loginIntent = new Intent(getActivity().getBaseContext(), LoginActivity.class);
+                    loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    //this.startActivity(loginIntent);
                     break;
                 case 1:
-                    view = R.layout.activity_peer;
+                    //view = R.layout.activity_peer;
+                    Intent peerActivity = new Intent(getActivity().getBaseContext(), PeerActivity.class);
+                    peerActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     break;
                 case 2:
-                    view = R.layout.activity_share_video;
+                    Intent shareIntent = new Intent(getActivity().getBaseContext(), ShareVideoActivity.class);
+                    shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    this.startActivity(shareIntent);
                     break;
                 case 3:
-                    view = R.layout.activity_split_video;
+                    //view = R.layout.activity_split_video;
+                    Intent splitVid = new Intent(getActivity().getBaseContext(), SplitVideoActivity.class);
+                    splitVid.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    this.startActivity(splitVid);
                     break;
                 case 4:
-                    view = R.layout.activity_settings;
+                    //view = R.layout.activity_settings;
+                    Intent settingsIntent = new Intent(getActivity().getBaseContext(), SettingsActivity.class);
+                    settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    this.startActivity(settingsIntent);
                     break;
             }
 
