@@ -4,18 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     tools:context=".FragmentVideoURL">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_weight="1">
 
-    <EditText
-    android:layout_width="300dp"
-    android:layout_height="match_parent"
-    android:hint="url"
-        android:id="@+id/url_edit"/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:hint="url"
+            android:id="@+id/url_edit"/>
 
-    <Button
-    android:layout_width="80dp"
-    android:layout_height="wrap_content"
-    android:id="@+id/url_button"
-        android:text="watch"
-    android:layout_gravity="right" />
-
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/url_button"
+            android:layout_toRightOf="@+id/url_edit"
+            android:text="watch"
+            android:layout_gravity="right" />
+    </RelativeLayout>
 </LinearLayout>
