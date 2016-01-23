@@ -15,7 +15,7 @@
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:hint="url"
-            android:id="@+id/url_edit"/>
+            android:id="@+id/url_edit" />
 
         <Button
             android:layout_width="80dp"
