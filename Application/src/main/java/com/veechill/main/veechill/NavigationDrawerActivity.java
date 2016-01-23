@@ -38,8 +38,6 @@ import android.widget.Toast;
 
 import android.support.v7.widget.LinearLayoutManager;
 
-import com.veechill.main.veechill.R;
-
 import java.util.Locale;
 
 /**
@@ -76,7 +74,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    private String[] mPlanetTitles;
+    private String[] mViews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +82,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
         setContentView(R.layout.activity_navigation_drawer);
 
         mTitle = mDrawerTitle = getTitle();
-        mPlanetTitles = getResources().getStringArray(R.array.view_array);
+        mViews = getResources().getStringArray(R.array.view_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (RecyclerView) findViewById(R.id.left_drawer);
 
@@ -97,7 +95,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
         mDrawerList.setHasFixedSize(true);
 
         // set up the drawer's list view with items and click listener
-        mDrawerList.setAdapter(new ViewsAdapter(mPlanetTitles, this));
+        mDrawerList.setAdapter(new ViewsAdapter(mViews, this));
         // enable ActionBar app icon to behave as action to toggle nav drawer
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
@@ -155,7 +153,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
         // Handle action buttons
         switch (item.getItemId()) {
             case R.id.action_websearch:
-                // create intent to perform web search for this planet
+                // create intent to perform web search for this view
                 Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
                 intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
                 // catch event that there's no activity to handle intent
@@ -178,7 +176,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-        Fragment fragment = PlanetFragment.newInstance(position);
+        Fragment fragment = menuFragment.newInstance(position);
 
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
@@ -186,7 +184,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
         ft.commit();
 
         // update selected item title, then close the drawer
-        setTitle(mPlanetTitles[position]);
+        setTitle(mViews[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 
@@ -218,17 +216,17 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
     /**
      * Fragment that appears in the "content_frame", shows a planet
      */
-    public static class PlanetFragment extends Fragment {
+    public static class menuFragment extends Fragment {
         public static final String ARG_PLANET_NUMBER = "planet_number";
 
-        public PlanetFragment() {
+        public menuFragment() {
             // Empty constructor required for fragment subclasses
         }
 
         public static Fragment newInstance(int position) {
-            Fragment fragment = new PlanetFragment();
+            Fragment fragment = new menuFragment();
             Bundle args = new Bundle();
-            args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
+            args.putInt(menuFragment.ARG_PLANET_NUMBER, position);
             fragment.setArguments(args);
             return fragment;
         }

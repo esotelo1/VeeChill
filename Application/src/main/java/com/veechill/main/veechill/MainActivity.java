@@ -32,26 +32,35 @@ import com.veechill.main.veechill.R;
 /**
  * A simple launcher activity offering access to the individual samples in this project.
  */
-public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
-    private Sample[] mSamples;
-    private GridView mGridView;
+public class MainActivity extends Activity /*implements AdapterView.OnItemClickListener */{
+    //private Sample[] mSamples;
+    //private GridView mGridView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent startIntent = new Intent(this, NavigationDrawerActivity.class);
+        startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        this.startActivity(startIntent);
+
+
         // Prepare list of samples in this dashboard.
-        mSamples = new Sample[]{
+        /*mSamples = new Sample[]{
             new Sample(R.string.navigationdraweractivity_title, R.string.navigationdraweractivity_description,
                     NavigationDrawerActivity.class),
         };
+        */
 
         // Prepare the GridView
+        /*
         mGridView = (GridView) findViewById(android.R.id.list);
         mGridView.setAdapter(new SampleAdapter());
         mGridView.setOnItemClickListener(this);
-    }
+        */
 
+    }
+    /*
     @Override
     public void onItemClick(AdapterView<?> container, View view, int position, long id) {
         startActivity(mSamples[position].intent);
@@ -105,4 +114,5 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                     new Intent(MainActivity.this, activityClass));
         }
     }
+    */
 }

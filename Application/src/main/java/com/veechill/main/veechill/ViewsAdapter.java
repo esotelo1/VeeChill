@@ -25,7 +25,7 @@ import android.widget.TextView;
 import com.veechill.main.veechill.R;
 
 /**
- * Adapter for the planet data used in our drawer menu,
+ * Adapter for the menu data used in our drawer menu,
  */
 public class ViewsAdapter extends RecyclerView.Adapter<ViewsAdapter.ViewHolder> {
     private String[] mDataset;
