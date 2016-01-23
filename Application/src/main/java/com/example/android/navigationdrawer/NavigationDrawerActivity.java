@@ -36,6 +36,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import android.support.v7.widget.LinearLayoutManager;
+
 import java.util.Locale;
 
 /**
@@ -83,6 +85,9 @@ public class NavigationDrawerActivity extends Activity implements PlanetAdapter.
         mPlanetTitles = getResources().getStringArray(R.array.planets_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (RecyclerView) findViewById(R.id.left_drawer);
+
+        LinearLayoutManager mLinearLayoutmanager = new LinearLayoutManager(this);
+        mDrawerList.setLayoutManager(mLinearLayoutmanager);
 
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);

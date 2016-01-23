@@ -47,6 +47,6 @@
         android:layout_gravity="left|start"
         android:choiceMode="singleChoice"
         android:divider="@null"
-        app:layoutManager="LinearLayoutManager"
+
         />
 </android.support.v4.widget.DrawerLayout>
