@@ -244,11 +244,17 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
                 case 0:
                     view = R.layout.activity_login;
                     break;
+                case 1:
+                    view = R.layout.activity_peer;
+                    break;
                 case 2:
-                    view = R.layout.activity_login;
+                    view = R.layout.activity_share_video;
+                    break;
+                case 3:
+                    view = R.layout.activity_split_video;
                     break;
                 case 4:
-                    view = R.layout.activity_login;
+                    view = R.layout.activity_settings;
                     break;
             }
 

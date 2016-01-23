@@ -41,7 +41,19 @@
         -->
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".PeerActivity"
+            android:label="@string/title_activity_peer" />
+        <activity
+            android:name=".ShareVideoActivity"
+            android:label="@string/title_activity_share_video" />
+        <activity
+            android:name=".SplitVideoActivity"
+            android:label="@string/title_activity_split_video" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>
