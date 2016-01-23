@@ -11,4 +11,9 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
     }
 
+    protected void readLogin(){
+        // pull login code here
+
+    }
+
 }

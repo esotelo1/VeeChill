@@ -40,13 +40,15 @@
          the container. A solid background is used for contrast
          with the content view. -->
     <android.support.v7.widget.RecyclerView
+        android:background="#D32F2F"
+        android:alpha=".9"
         android:id="@+id/left_drawer"
         android:scrollbars="vertical"
-        android:layout_width="240dp"
+        android:layout_width="150dp"
         android:layout_height="match_parent"
         android:layout_gravity="left|start"
         android:choiceMode="singleChoice"
-        android:divider="@null"
+        android:divider="?android:dividerHorizontal"
 
         />
 </android.support.v4.widget.DrawerLayout>
