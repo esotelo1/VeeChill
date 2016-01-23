@@ -30,4 +30,7 @@
     <string name="title_activity_share_video">ShareVideoActivity</string>
     <string name="title_activity_split_video">SplitVideoActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
+
+
+    <string name="youtubeLink">youtubeLink</string>
 </resources>

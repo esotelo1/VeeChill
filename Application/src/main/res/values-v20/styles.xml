@@ -16,11 +16,12 @@ limitations under the License.
 -->
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" > <!--parent="android:Theme.Material.Light"-->
-        <item name="colorPrimary">@color/color_primary</item>
+    <style name="AppTheme"  parent="android:Theme.Material.Light">
+        <!--<item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_secondary</item>
         <item name="colorAccent">@color/color_accent</item>
         <item name="android:statusBarColor">@color/color_primary</item>
+        -->
     </style>
 
 </resources>

@@ -17,8 +17,12 @@
     package="com.veechill.main.veechill"
     android:versionCode="1"
     android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="21" />
+    <uses-sdk android:minSdkVersion="14" />
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+
+    <!-- Request Permissions -->
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
