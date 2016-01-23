@@ -151,8 +151,9 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
             return true;
         }
         // Handle action buttons
+
         switch (item.getItemId()) {
-            case R.id.action_websearch:
+            /*case R.id.action_websearch:
                 // create intent to perform web search for this view
                 Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
                 intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
@@ -162,7 +163,8 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
                 } else {
                     Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
                 }
-                return true;
+                return true;*/
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -171,6 +173,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
     /* The click listener for RecyclerView in the navigation drawer */
     @Override
     public void onClick(View view, int position) {
+
         selectItem(position);
     }
 
@@ -216,6 +219,7 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
     /**
      * Fragment that appears in the "content_frame", shows a planet
      */
+
     public static class menuFragment extends Fragment {
         public static final String ARG_PLANET_NUMBER = "planet_number";
 
@@ -234,16 +238,29 @@ public class NavigationDrawerActivity extends Activity implements ViewsAdapter.O
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
             int i = getArguments().getInt(ARG_PLANET_NUMBER);
-            String planet = getResources().getStringArray(R.array.view_array)[i];
+            int view = R.layout.fragment_planet;
+            switch(i) {
+                case 0:
+                    view = R.layout.activity_login;
+                    break;
+                case 2:
+                    view = R.layout.activity_login;
+                    break;
+                case 4:
+                    view = R.layout.activity_login;
+                    break;
+            }
 
-            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
-                    "drawable", getActivity().getPackageName());
-            ImageView iv = ((ImageView) rootView.findViewById(R.id.image));
-            iv.setImageResource(imageId);
 
-            getActivity().setTitle(planet);
+            String menuViews = getResources().getStringArray(R.array.view_array)[i];
+            View rootView = inflater.inflate(view, container, false);
+            //int imageId = getResources().getIdentifier(menuViews.toLowerCase(Locale.getDefault()),
+                    //"drawable", getActivity().getPackageName());
+            //ImageView iv = ((ImageView) rootView.findViewById(R.id.image));
+            //iv.setImageResource(imageId);
+
+            getActivity().setTitle(menuViews);
             return rootView;
         }
     }
