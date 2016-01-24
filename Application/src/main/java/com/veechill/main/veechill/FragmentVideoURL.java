@@ -17,14 +17,20 @@ public class FragmentVideoURL extends Fragment implements View.OnClickListener {
     private EditText text;
     private String url;
 
+    private LayoutInflater inflater;
+    private ViewGroup container;
+    View rootView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
+        this.inflater = inflater;
+        this.container = container;
 
-        View rootView = inflater.inflate(R.layout.fragment_split_video_url, container, false);
+         rootView = inflater.inflate(R.layout.fragment_split_video_url, container, false);
+
 
         text = (EditText) rootView.findViewById(R.id.url_edit);
         url = "";
@@ -38,6 +44,8 @@ public class FragmentVideoURL extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         url = text.getText().toString();
+        Video vid = new Video(rootView);
+        vid.play(inflater, container, url);
     }
 
     public String getUrl() {

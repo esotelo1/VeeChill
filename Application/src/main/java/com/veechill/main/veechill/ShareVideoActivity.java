@@ -16,9 +16,11 @@ public class ShareVideoActivity extends YouTubeBaseActivity {
     Button b;
     private YouTubePlayerView youTubePlayerView;
     private YouTubePlayer.OnInitializedListener onInitializedListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_share_video);
 
         FragmentManager fragmentManager = getFragmentManager();
 
@@ -29,6 +31,27 @@ public class ShareVideoActivity extends YouTubeBaseActivity {
 
         fragmentTransaction.replace(android.R.id.content, fragmentVideoURL);
         fragmentTransaction.commit();
+/*
+        youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                youTubePlayer.loadVideo("gJ3mGQAFS6l");
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+            }
+        };
+
+        b = (Button) findViewById(R.id.youtubeButton);*/
+        /*b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youTubePlayerView.initialize("AIzaSyAyq1paqjDUyxOBy0uMJ5JpGq791LViez0", onInitializedListener);
+            }
+        });*/
 
         /*
         FragmentVideo fragmentVideo = new FragmentVideo();
