@@ -10,11 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.veechill.main.veechill.SplitVideoActivity">
 
-    <fragment
+    <FrameLayout
+        android:id="@+id/Container1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_split_video_url"
-        />
+        android:layout_height="100dp"/>
+
+    <FrameLayout
+        android:id="@+id/Container2"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/Container1"/>
 
 
 </RelativeLayout>

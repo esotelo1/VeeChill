@@ -14,12 +14,20 @@ import android.widget.EditText;
 public class FragmentVideoURL extends Fragment implements View.OnClickListener {
     
     private Button b;
-    View view;
+    private EditText text;
+    private String url;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
+
         View rootView = inflater.inflate(R.layout.fragment_split_video_url, container, false);
+
+        text = (EditText) rootView.findViewById(R.id.url_edit);
+        url = "";
 
         b = (Button) rootView.findViewById(R.id.url_button);
         b.setOnClickListener(this);
@@ -29,11 +37,11 @@ public class FragmentVideoURL extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        url = text.getText().toString();
+    }
 
-        //EditText text = (EditText) v.findViewById(R.id.url_edit);
-        //String s = text.getText().toString();
-        Log.i("OnClick", "test");
-
+    public String getUrl() {
+        return this.url;
     }
 
 }

@@ -4,9 +4,11 @@
     android:layout_height="match_parent"
     tools:context="com.veechill.main.veechill.FragmentVideo">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/video_view"
+        android:gravity="center"
         android:text="VIDEO CONTENT"/>
     <!--
     <com.google.android.youtube.player.YouTubePlayerView
